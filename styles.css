@@ -4,121 +4,156 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 .container {
     display: grid;
-    grid-template-columns: 1fr 3fr;
+    grid-template-columns: 3fr 1fr;
+    /* Sidebar on the right */
     grid-template-rows: auto 1fr auto;
-    gap: 20px;
+    gap: 60px;
     min-height: 100vh;
+    /* Ensures the container takes at least the full height of the viewport */
     grid-template-areas:
         "header header"
-        "sidebar main"
+        "main sidebar"
         "footer footer";
-
+    padding: 10px;
 }
+
+
 
 header {
     grid-area: header;
-    background-color: #FFFFFF;
+    background-color: #63B3ED;
+    /* Header background color */
+    color: #FFFFFF;
+    /* Header text color */
+    text-align: center;
     padding: 20px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
 }
 
-header h1 {
-    font-size: 36px;
+h1 {
     font-family: Georgia, 'Times New Roman', Times, serif;
-    margin: 10px 0;
-
+    font-size: 36px;
+    margin: 0;
 }
 
+header p {
+    font-size: 18px;
+    margin: 10px 0;
+}
 
 .profile-pic {
     width: 150px;
     height: 150px;
     border-radius: 50%;
+    margin-top: 10px;
     object-fit: cover;
     border: 5px solid white;
     margin-bottom: 10px;
 }
 
-main{
+main {
     grid-area: main;
-    background-color: white;
     padding: 20px;
-    border-radius: 5px;
 }
 
-main article time, main article strong{
-    color: #718096;
-
+article {
+    margin-bottom: 40px;
+    /* Adds space between articles */
+    /* overflow: hidden; /* Ensures floated elements don't affect layout */
 }
 
-aside{
+article h2 {
+    text-align: left;
+    /* Ensures blog post titles are aligned to the left */
+    margin-bottom: 15px;
+    /* Adds space between the title and the paragraphs */
+}
+
+.post-image {
+    width: 150px;
+    /* Adjust as needed */
+    height: auto;
+    /* Maintain aspect ratio */
+    margin-left: 20px;
+    /* Space between text and image */
+}
+
+.float-left {
+    float: left;/* Float the image to the left */
+    margin-right: 15px;/* Adds space between the image and the text */
+    margin-bottom: 15px;/* Space below the image */
+    width: 150px;/* Set the width of the image */
+    height: auto;/* Maintain aspect ratio */
+}
+
+.float-right {
+    float: right;/* Float the image to the right */
+    margin-left: 1px;/* Adds space between the image and the text */
+    margin-bottom: 15px; /* Space below the image */
+    width: 150px;/* Set the width of the image */
+    height: auto;/* Maintain aspect ratio */
+}
+
+.paragraph-wrapper {
+    overflow: hidden; /* Contain floated children */
+}
+
+aside {
     grid-area: sidebar;
-    background-color: #f9f9f9;
     padding: 20px;
-    border-radius: 5px;
 }
 
-
-aside section.about{
-    background-color: #E2E8F0;
-    padding: 15px;
-    border-radius: 5px;
-
+h3 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 24px;
+    margin-bottom: 10px;
 }
 
-/*heading for sidebar */
-aside h3.about-heading{
+.about p {
     color: #000000;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    margin-top: 0;
+    /* Black for the About section text */
 }
 
-
-aside h3{
-    margin-top: 0;
-
-}
-
-aside h3:not(.about-heading){
+.social-media h3,
+.archives h3 {
     color: #48BB78;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    /* Green for Social Media and Archives */
 }
 
-/*For social media & Archives*/
-aside ul li a{
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin: 5px 0;
+}
+
+a {
     color: #4299E1;
+    /* Link color */
     text-decoration: none;
 }
 
-/*Style for Footer*/
-footer{
+a:hover {
+    text-decoration: underline;
+    /* Add underline on hover */
+}
+
+footer {
     grid-area: footer;
     background-color: #2C5282;
+    /* Footer background color */
     color: #FFFFFF;
+    /* Footer text color */
     text-align: center;
     padding: 10px;
-}
-
-/*Blog post Styling*/
-.post-image-right {
-    float: right;
-    margin: 0 0 10px 15px;
-    width: 200px;
-}
-
-.post-image-left{
-    float: left;
-    margin: 0 15px 10px 0;
-    width: 200px;
-}
-
-h3{
-    margin-top: 0;
 }
