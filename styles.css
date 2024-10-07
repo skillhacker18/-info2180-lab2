@@ -61,7 +61,8 @@ main {
 }
 
 article {
-    margin-bottom: 40px;/* Adds space between articles */
+    margin-bottom: 40px;
+    /* Adds space between articles */
     
 }
 
@@ -89,7 +90,7 @@ article h2 {
     margin-right: 15px; /* Adds space between the image and the text */
     margin-bottom: 15px; /* Space below the image */
     width: 200px; /* Set the width of the image */
-    height: auto; 
+    height: 170px; 
     position: relative;
 }
 
@@ -106,8 +107,8 @@ article h2 {
     margin-left: 1px;/* Adds space between the margain and the pic */
     margin-bottom: 15px;
     width: 200px;
-    height: auto;
-    
+    height: 170px;
+    position: relative;
 }
 aside {
     grid-area: sidebar;
