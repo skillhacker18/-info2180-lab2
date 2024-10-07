@@ -78,11 +78,6 @@ article h2 {
     color: #48BB78;/* blog post title color to #48BB78 */
 }
 
-.post-image {
-    width: 150px;/* adjust the width of the image */
-    height: auto;
-    margin-left: 20px;/* Space between text and image */
-}
 
 /* Float the image to the left */
 .float-left {
@@ -97,8 +92,8 @@ article h2 {
 /* Make the image float and overlap the second paragraph */
 .over-paragraph {
     position: absolute; /* Position the image absolutely to overlap the second paragraph */
-    left: 20px; /* Adjust horizontal position */
-    top: 50px; /* Adjust vertical position */
+    left: 20px;
+    top: 50px; 
     z-index: 1; 
 }
 
