@@ -9,12 +9,10 @@ body {
 
 .container {
     display: grid;
-    grid-template-columns: 3fr 1fr;
-    /* Sidebar on the right */
+    grid-template-columns: 3fr 1fr;/* Sidebar on the right */
     grid-template-rows: auto 1fr auto;
     gap: 60px;
     min-height: 100vh;
-    /* Ensures the container takes at least the full height of the viewport */
     grid-template-areas:
         "header header"
         "main sidebar"
@@ -26,10 +24,8 @@ body {
 
 header {
     grid-area: header;
-    background-color: #63B3ED;
-    /* Header background color */
-    color: #FFFFFF;
-    /* Header text color */
+    background-color: #63B3ED;/* Header background color */
+    color: #FFFFFF;/* Header text color */
     text-align: center;
     padding: 20px;
     display: flex;
@@ -65,47 +61,54 @@ main {
 }
 
 article {
-    margin-bottom: 40px;
-    /* Adds space between articles */
-    /* overflow: hidden; /* Ensures floated elements don't affect layout */
+    margin-bottom: 40px;/* Adds space between articles */
+    
+}
+
+article time,
+article strong {
+    color: #718096; /* Set the color for date and author */
 }
 
 article h2 {
     text-align: left;
-    /* Ensures blog post titles are aligned to the left */
-    margin-bottom: 15px;
-    /* Adds space between the title and the paragraphs */
+    margin-bottom: 15px;/* Adds space between the title and the paragraphs */
+    font-size: 32px;/* blog post titles to 32px */
+    color: #48BB78;/* blog post title color to #48BB78 */
 }
 
 .post-image {
-    width: 150px;
-    /* Adjust as needed */
+    width: 150px;/* adjust the width of the image */
     height: auto;
-    /* Maintain aspect ratio */
-    margin-left: 20px;
-    /* Space between text and image */
+    margin-left: 20px;/* Space between text and image */
 }
 
+/* Float the image to the left */
 .float-left {
-    float: left;/* Float the image to the left */
-    margin-right: 15px;/* Adds space between the image and the text */
-    margin-bottom: 15px;/* Space below the image */
-    width: 150px;/* Set the width of the image */
-    height: auto;/* Maintain aspect ratio */
+    float: left;
+    margin-right: 15px; /* Adds space between the image and the text */
+    margin-bottom: 15px; /* Space below the image */
+    width: 200px; /* Set the width of the image */
+    height: auto; 
+    position: relative;
+}
+
+/* Make the image float and overlap the second paragraph */
+.over-paragraph {
+    position: absolute; /* Position the image absolutely to overlap the second paragraph */
+    left: 20px; /* Adjust horizontal position */
+    top: 50px; /* Adjust vertical position */
+    z-index: 1; 
 }
 
 .float-right {
-    float: right;/* Float the image to the right */
-    margin-left: 1px;/* Adds space between the image and the text */
-    margin-bottom: 15px; /* Space below the image */
-    width: 150px;/* Set the width of the image */
-    height: auto;/* Maintain aspect ratio */
+    float: right; /* ensure the image stays to the right */
+    margin-left: 1px;/* Adds space between the margain and the pic */
+    margin-bottom: 15px;
+    width: 200px;
+    height: auto;
+    
 }
-
-.paragraph-wrapper {
-    overflow: hidden; /* Contain floated children */
-}
-
 aside {
     grid-area: sidebar;
     padding: 20px;
@@ -117,15 +120,17 @@ h3 {
     margin-bottom: 10px;
 }
 
+.about {
+    background-color: #E2E8F0;
+    padding: 20px;
+}
 .about p {
-    color: #000000;
-    /* Black for the About section text */
+    color: #000000;/* Black for the About section text */
 }
 
 .social-media h3,
 .archives h3 {
-    color: #48BB78;
-    /* Green for Social Media and Archives */
+    color: #48BB78;/* Green for Social Media and Archives */
 }
 
 ul {
@@ -138,22 +143,18 @@ li {
 }
 
 a {
-    color: #4299E1;
-    /* Link color */
+    color: #4299E1;/* color of the link */
     text-decoration: none;
 }
 
 a:hover {
-    text-decoration: underline;
-    /* Add underline on hover */
+    text-decoration: underline;/* Add underline on hover */
 }
 
 footer {
     grid-area: footer;
-    background-color: #2C5282;
-    /* Footer background color */
-    color: #FFFFFF;
-    /* Footer text color */
-    text-align: center;
+    background-color: #2C5282;/* Footer background color */
+    color: #FFFFFF;/* Footer text color */
+    text-align: left;
     padding: 10px;
 }
